@@ -50,7 +50,7 @@
     ...
   }: let
     vars = {
-      user = "humaid";
+      user = "hazaa";
     };
     mksystem = import ./lib/mksystem.nix {
       inherit (nixpkgs) lib;
@@ -67,6 +67,10 @@
 
       # Sytem that runs on Thinkpad T590
       serow = mksystem.nixosSystem "serow" {
+        inherit vars;
+        system = "x86_64-linux";
+      };
+      hazaa = mksystem.nixosSystem "hazaa" {
         inherit vars;
         system = "x86_64-linux";
       };
